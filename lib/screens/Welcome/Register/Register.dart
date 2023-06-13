@@ -20,38 +20,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
   final _confirmPasswordController = TextEditingController();
   final _addressController = TextEditingController();
 
-  bool _isTermsChecked = false;
-
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      if (!_isTermsChecked) {
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text('Terms and Conditions'),
-            content: Text('Please agree to the terms and conditions.'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  setState(() {
-                    _isTermsChecked = true;
-                  });
-                  Navigator.pop(context);
-                },
-                child: Text('Agree'),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text('Cancel'),
-              ),
-            ],
-          ),
-        );
-        return;
-      }
-
       // Registration
       final fullname = _fullnameController.text;
       final username = _usernameController.text;
@@ -99,7 +69,6 @@ class _RegistrationFormState extends State<RegistrationForm> {
         if (response.statusCode == 200) {
           // Clear the form
           _formKey.currentState!.reset();
-          _isTermsChecked = false;
 
           // Show success dialog and navigate to the login page
           showDialog(
@@ -195,35 +164,6 @@ class _RegistrationFormState extends State<RegistrationForm> {
     final regex =
         RegExp(r'^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$');
     return regex.hasMatch(value);
-  }
-
-  void displayTermsAndConditions() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Terms and Conditions'),
-          content: Text('Here are the terms and conditions...'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  _isTermsChecked = true;
-                });
-                Navigator.of(context).pop();
-              },
-              child: Text('Agree'),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Cancel'),
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override

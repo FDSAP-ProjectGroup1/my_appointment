@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectsystem/screens/Dashboard/dashboardScreen.dart';
+import 'package:projectsystem/screens/Welcome/Login/loginScreen.dart';
 
 class TermsAndConditionsPage extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _TermsAndConditionsPageState extends State<TermsAndConditionsPage> {
   void navigateToDashboard() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => DashboardScreen()),
+      MaterialPageRoute(builder: (context) => LoginPage()),
     );
   }
 

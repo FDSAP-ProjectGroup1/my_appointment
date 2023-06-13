@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projectsystem/screens/Dashboard/Appointment/addScreen.dart';
-import 'package:projectsystem/screens/Dashboard/Appointment/appointmentScreen.dart';
-import 'package:projectsystem/screens/Dashboard/Notification/notifScreen.dart';
-import 'package:projectsystem/screens/Dashboard/Profile/aboutScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Search/searchScreen.dart';
 import 'package:projectsystem/screens/Dashboard/dashboardScreen.dart';
-import 'package:projectsystem/screens/Welcome/WelcomeScreen.dart';
 
+import '../../Welcome/WelcomeScreen.dart';
+import '../Appointment/appointmentScreen.dart';
+import '../Notification/notifScreen.dart';
+import 'aboutScreen.dart';
 import 'myprofileScreen.dart';
 
 class profileScreen extends StatelessWidget {

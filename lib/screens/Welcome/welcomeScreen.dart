@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projectsystem/screens/Welcome/Login/loginScreen.dart';
 import 'package:projectsystem/screens/Welcome/Register/Register.dart';
+import 'package:projectsystem/screens/Welcome/TermsandCondition.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -80,7 +80,7 @@ class WelcomeScreen extends StatelessWidget {
                   MaterialButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => LoginPage(),
+                        builder: (context) => TermsAndConditionsPage(),
                       ));
                     },
                     color: Color(0xffffffff),

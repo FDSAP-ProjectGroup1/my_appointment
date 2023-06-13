@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:projectsystem/screens/Dashboard/Appointment/addScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Notification/notifScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Search/searchScreen.dart';
@@ -6,7 +9,33 @@ import 'package:projectsystem/screens/Dashboard/Search/viewScreen.dart';
 
 import 'Profile/profileScreen.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
+  @override
+  _DashboardScreenState createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  List<dynamic> appointments = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    final response =
+        await http.get(Uri.parse('http://192.168.0.186:8080/api/all_users'));
+    if (response.statusCode == 200) {
+      setState(() {
+        appointments = json.decode(response.body);
+      });
+    } else {
+      // Handle error response
+      print('Failed to fetch data');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

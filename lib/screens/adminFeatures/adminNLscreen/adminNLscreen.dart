@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projectsystem/screens/Welcome/Login/loginScreen.dart';
+import 'package:projectsystem/screens/Welcome/WelcomeScreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminALscreen/adminALscreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminDBscreen/adminDBscreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminNLscreen/adminNMscreen.dart';
@@ -154,7 +154,7 @@ class adminNLscreen extends StatelessWidget {
                                       onPressed: () {
                                         Navigator.of(context)
                                             .push(MaterialPageRoute(
-                                          builder: (context) => LoginPage(),
+                                          builder: (context) => WelcomeScreen(),
                                         ));
                                       },
                                     ),

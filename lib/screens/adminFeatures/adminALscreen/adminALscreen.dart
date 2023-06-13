@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectsystem/screens/Welcome/WelcomeScreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminALscreen/adminVAscreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminDBscreen/adminDBscreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminNLscreen/adminNLscreen.dart';
@@ -128,10 +129,42 @@ class adminALscreen extends StatelessWidget {
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.zero,
                           ),
-                          child: Icon(
-                            Icons.logout,
-                            color: Color(0xff212435),
-                            size: 24,
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.logout,
+                              color: Color(0xff000000),
+                              size: 24,
+                            ),
+                            onPressed: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Logout Confirmation'),
+                                    content: Text(
+                                        'Are you sure you want to logout?'),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        child: Text('Cancel'),
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                      ),
+                                      TextButton(
+                                        child: Text('Logout'),
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                WelcomeScreen(),
+                                          ));
+                                        },
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
                           ),
                         ),
                       ],
