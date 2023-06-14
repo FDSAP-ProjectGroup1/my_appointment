@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:projectsystem/screens/Dashboard/dashboardScreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminNLscreen/Admin.dart';
 
 class addScreen extends StatefulWidget {
@@ -9,32 +7,30 @@ class addScreen extends StatefulWidget {
 }
 
 class _addScreenState extends State<addScreen> {
-  late DateTime selectedDate;
-  late String selectedTime;
+  late DateTime selectedDate = DateTime.now();
+  late TimeOfDay selectedTime = TimeOfDay.now();
   late String appointmentTitle;
   late String appointmentReason;
 
   List<Appointment> appointments = [];
 
   void submitAppointment(BuildContext context) {
-    // Retrieve the values from the text fields
-    // and create an Appointment object
     Appointment newAppointment = Appointment(
       date: selectedDate,
-      time: selectedTime,
+      time: selectedTime.format(context),
       title: appointmentTitle,
       reason: appointmentReason,
     );
 
-    // Add the new appointment to the list
     appointments.add(newAppointment);
 
-    // Navigate to the admin screen for approval or rejection
     Navigator.of(context).push(MaterialPageRoute(
       builder: (context) => AdminScreen(
         appointments: appointments,
         onAppointmentAction: (appointment) {
-          // Handle approval or rejection of the appointment
+          setState(() {
+            appointment.approved = !appointment.approved;
+          });
         },
       ),
     ));
@@ -76,9 +72,7 @@ class _addScreenState extends State<addScreen> {
                           size: 24,
                         ),
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => DashboardScreen(),
-                          ));
+                          Navigator.of(context).pop();
                         },
                       ),
                     ),
@@ -126,18 +120,35 @@ class _addScreenState extends State<addScreen> {
                 width: 250,
                 height: 250,
                 decoration: BoxDecoration(
-                  color: Colors.blueGrey.shade100,
+                  color: Colors.blueAccent.shade100,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: CupertinoDatePicker(
-                  initialDateTime: DateTime.now(),
-                  mode: CupertinoDatePickerMode.date,
-                  onDateTimeChanged: (DateTime dateTime) {
-                    setState(() {
-                      selectedDate = dateTime;
-                    });
+                child: InkWell(
+                  onTap: () async {
+                    final selected = await showDatePicker(
+                      context: context,
+                      initialDate: selectedDate,
+                      firstDate: DateTime.now(),
+                      lastDate: DateTime.now().add(Duration(days: 365)),
+                    );
+                    if (selected != null) {
+                      setState(() {
+                        selectedDate = selected;
+                      });
+                    }
                   },
+                  child: Center(
+                    child: Text(
+                      '${selectedDate.year}-${selectedDate.month}-${selectedDate.day}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Padding(
@@ -163,18 +174,33 @@ class _addScreenState extends State<addScreen> {
                 width: 250,
                 height: 150,
                 decoration: BoxDecoration(
-                  color: Colors.teal.shade100,
+                  color: Colors.tealAccent.shade400,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: CupertinoPicker(
-                  itemExtent: 32.0,
-                  onSelectedItemChanged: (int index) {
-                    setState(() {
-                      selectedTime = getTimeFromIndex(index);
-                    });
+                child: InkWell(
+                  onTap: () async {
+                    final selected = await showTimePicker(
+                      context: context,
+                      initialTime: selectedTime,
+                    );
+                    if (selected != null) {
+                      setState(() {
+                        selectedTime = selected;
+                      });
+                    }
                   },
-                  children: getPickerTimeItems(),
+                  child: Center(
+                    child: Text(
+                      selectedTime.format(context),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Padding(
@@ -258,14 +284,6 @@ class _addScreenState extends State<addScreen> {
     );
   }
 
-  List<Widget> getPickerTimeItems() {
-    List<Widget> pickerItems = [];
-    for (int i = 0; i < 24; i++) {
-      pickerItems.add(Text(getTimeFromIndex(i)));
-    }
-    return pickerItems;
-  }
-
   String getTimeFromIndex(int index) {
     return '${index.toString().padLeft(2, '0')}:00';
   }
@@ -276,11 +294,89 @@ class Appointment {
   final String time;
   final String title;
   final String reason;
+  bool approved;
 
   Appointment({
     required this.date,
     required this.time,
     required this.title,
     required this.reason,
+    this.approved = false,
   });
 }
+
+//import 'package:flutter/material.dart';
+//
+// class AddScreen extends StatefulWidget {
+//   @override
+//   _AddScreenState createState() => _AddScreenState();
+// }
+//
+// class _AddScreenState extends State<AddScreen> {
+//   late DateTime selectedDate = DateTime.now();
+//   late TimeOfDay selectedTime = TimeOfDay.now();
+//   late String appointmentTitle;
+//   late String appointmentReason;
+//
+//   List<Appointment> appointments = [];
+//
+//   void submitAppointment(BuildContext context) {
+//     Appointment newAppointment = Appointment(
+//       date: selectedDate,
+//       time: selectedTime.format(context),
+//       title: appointmentTitle,
+//       reason: appointmentReason,
+//       approved: false, // Set the initial approval status to false
+//     );
+//
+//     setState(() {
+//       appointments.add(newAppointment);
+//     });
+//
+//     // Show a success message or navigate to a confirmation screen
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Colors.white,
+//       body: Padding(
+//         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+//         child: SingleChildScrollView(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             mainAxisSize: MainAxisSize.max,
+//             children: [
+//               // ...existing code...
+//               ElevatedButton(
+//                 onPressed: () => submitAppointment(context),
+//                 child: Text('Submit'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+//
+//   String getTimeFromIndex(int index) {
+//     return '${index.toString().padLeft(2, '0')}:00';
+//   }
+// }
+//
+// class Appointment {
+//   final DateTime date;
+//   final String time;
+//   final String title;
+//   final String reason;
+//   bool approved;
+//
+//   Appointment({
+//     required this.date,
+//     required this.time,
+//     required this.title,
+//     required this.reason,
+//     this.approved = false,
+//   });
+// }

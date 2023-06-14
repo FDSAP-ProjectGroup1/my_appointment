@@ -10,56 +10,61 @@ class AdminScreen extends StatelessWidget {
     required this.onAppointmentAction,
   });
 
+  bool isAppointmentConflict(Appointment newAppointment) {
+    for (var appointment in appointments) {
+      if (appointment.date == newAppointment.date &&
+          appointment.time == newAppointment.time) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red.shade900,
         title: Text('Admin Screen'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add_circle_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => addScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: appointments.length,
         itemBuilder: (context, index) {
-          Appointment appointment = appointments[index];
-          return Column(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "REQUESTED APPOINTMENT",
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.clip,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontStyle: FontStyle.normal,
-                    fontSize: 10,
-                    color: Color(0xff000000),
-                  ),
+          final appointment = appointments[index];
+
+          return ListTile(
+            title: Text(appointment.title),
+            subtitle:
+                Text(appointment.reason + "\n" + appointment.date.toString()),
+            leading: Text(appointment.time),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.check),
+                  onPressed: () {
+                    onAppointmentAction(appointment);
+                  },
                 ),
-              ),
-              ListTile(
-                title: Text(appointment.title),
-                subtitle: Text(appointment.reason),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.check),
-                      onPressed: () {
-                        // Perform approval action
-                        onAppointmentAction(appointment);
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.close),
-                      onPressed: () {
-                        // Perform rejection action
-                        onAppointmentAction(appointment);
-                      },
-                    ),
-                  ],
+                IconButton(
+                  icon: Icon(Icons.close),
+                  onPressed: () {
+                    onAppointmentAction(appointment);
+                  },
                 ),
-              ),
-            ],
+              ],
+            ),
           );
         },
       ),

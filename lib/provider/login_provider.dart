@@ -17,13 +17,6 @@ class LoginProvider extends ChangeNotifier {
         MaterialPageRoute(builder: (context) => adminNLscreen()),
         (route) => false,
       );
-    } else if (email == "user@mail.com" && password == "password") {
-      // Navigate to regular user dashboard
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => DashboardScreen()),
-        (route) => false,
-      );
     } else {
       try {
         final loginData = {'username': email, 'password': password};
