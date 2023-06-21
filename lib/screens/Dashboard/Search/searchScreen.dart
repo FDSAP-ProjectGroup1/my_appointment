@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projectsystem/screens/Dashboard/Appointment/addScreen.dart';
+import 'package:projectsystem/screens/Dashboard/Chatbot.dart';
 import 'package:projectsystem/screens/Dashboard/Notification/notifScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Profile/profileScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Search/viewScreen.dart';
@@ -524,6 +525,15 @@ class searchScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ChatScreen()));
+        },
+        icon: Icon(Icons.mail_outline),
+        label: Text('Chatbot'),
+        backgroundColor: Color(0xff800000),
       ),
     );
   }

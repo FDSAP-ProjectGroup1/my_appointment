@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectsystem/screens/Dashboard/Chatbot.dart';
 import 'package:projectsystem/screens/Dashboard/dashboardScreen.dart';
 
 class viewScreen extends StatelessWidget {
@@ -236,6 +237,15 @@ class viewScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ChatScreen()));
+        },
+        icon: Icon(Icons.mail_outline),
+        label: Text('Chatbot'),
+        backgroundColor: Color(0xff800000),
       ),
     );
   }

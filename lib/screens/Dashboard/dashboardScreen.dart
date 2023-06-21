@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:projectsystem/screens/Dashboard/Appointment/addScreen.dart';
+import 'package:projectsystem/screens/Dashboard/Chatbot.dart';
 import 'package:projectsystem/screens/Dashboard/Notification/notifScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Search/searchScreen.dart';
 import 'package:projectsystem/screens/Dashboard/Search/viewScreen.dart';
@@ -643,6 +644,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => ChatScreen()));
+        },
+        icon: Icon(Icons.mail_outline),
+        label: Text('Chatbot'),
+        backgroundColor: Color(0xff800000),
       ),
     );
   }
