@@ -5,8 +5,18 @@ class aboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,7 +66,7 @@ class aboutScreen extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 36,
-                          color: Color(0xff800000),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ),
@@ -83,7 +93,7 @@ class aboutScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontStyle: FontStyle.normal,
-                                fontSize: 10,
+                                fontSize: 14,
                                 color: Color(0xff000000),
                               ),
                             ),
@@ -92,7 +102,7 @@ class aboutScreen extends StatelessWidget {
                             padding: EdgeInsets.all(10),
                             margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
                             width: MediaQuery.of(context).size.width * 0.9,
-                            height: 370,
+                            height: 280,
                             decoration: BoxDecoration(
                               color: Color(0xffffffff),
                               shape: BoxShape.rectangle,
@@ -146,7 +156,7 @@ class aboutScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontStyle: FontStyle.normal,
-                                fontSize: 10,
+                                fontSize: 14,
                                 color: Color(0xff000000),
                               ),
                             ),
@@ -155,7 +165,7 @@ class aboutScreen extends StatelessWidget {
                             padding: EdgeInsets.all(10),
                             margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                             width: MediaQuery.of(context).size.width * 0.9,
-                            height: 1850,
+                            height: 1550,
                             decoration: BoxDecoration(
                               color: Color(0xffffffff),
                               shape: BoxShape.rectangle,
@@ -265,6 +275,7 @@ class aboutScreen extends StatelessWidget {
           ],
         ),
       ),
+     ),
     );
   }
 }

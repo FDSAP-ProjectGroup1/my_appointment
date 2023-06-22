@@ -6,8 +6,18 @@ class messageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo.shade100,
-      body: Padding(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      child: Padding(
         padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
         child: SingleChildScrollView(
           child: Column(
@@ -46,7 +56,7 @@ class messageScreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "My Profile",
+                      "NOTIFICATION",
                       textAlign: TextAlign.start,
                       overflow: TextOverflow.clip,
                       style: TextStyle(
@@ -123,14 +133,12 @@ class messageScreen extends StatelessWidget {
                                 width: MediaQuery.of(context).size.width *
                                     0.7000000000000001,
                                 decoration: BoxDecoration(
-                                  color: Colors.blueGrey.shade100,
+                                  color: Colors.white,
                                   shape: BoxShape.rectangle,
                                   borderRadius: BorderRadius.only(
                                       topRight: Radius.circular(10.0),
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0)),
-                                  border: Border.all(
-                                      color: Color(0x4d9e9e9e), width: 1),
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.all(10),
@@ -160,8 +168,7 @@ class messageScreen extends StatelessWidget {
                                       topRight: Radius.circular(10.0),
                                       bottomLeft: Radius.circular(10.0),
                                       bottomRight: Radius.circular(10.0)),
-                                  border: Border.all(
-                                      color: Color(0x4d9e9e9e), width: 1),
+
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.all(10),
@@ -190,6 +197,7 @@ class messageScreen extends StatelessWidget {
           ),
         ),
       ),
+     ),
     );
   }
 }

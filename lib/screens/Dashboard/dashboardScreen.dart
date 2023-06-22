@@ -261,7 +261,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               width: MediaQuery.of(context).size.width * 0.8,
                               height: 200,
                               decoration: BoxDecoration(
-                                color: Colors.blueGrey.shade100,
+                                color: Colors.white,
                                 shape: BoxShape.rectangle,
                                 borderRadius: BorderRadius.circular(10.0),
                                 border: Border.all(
@@ -276,9 +276,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                     margin: EdgeInsets.all(0),
                                     padding: EdgeInsets.all(0),
                                     width: MediaQuery.of(context).size.width,
-                                    height: 127,
+                                    height: 128,
                                     decoration: BoxDecoration(
-                                      color: Color(0xff80000),
+                                      color: Color(0xff800000),
                                       shape: BoxShape.rectangle,
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
@@ -297,7 +297,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             fontWeight: FontWeight.w400,
                                             fontStyle: FontStyle.normal,
                                             fontSize: 50,
-                                            color: Color(0xff000000),
+                                            color: Color(0xffffffff),
                                           ),
                                         ),
                                         Text(
@@ -308,7 +308,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                             fontWeight: FontWeight.w400,
                                             fontStyle: FontStyle.normal,
                                             fontSize: 20,
-                                            color: Color(0xff000000),
+                                            color: Color(0xffffffff),
                                           ),
                                         ),
                                       ],

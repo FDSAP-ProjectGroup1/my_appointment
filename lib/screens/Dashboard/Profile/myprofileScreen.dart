@@ -7,18 +7,28 @@ class myprofileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.max,
         children: [
           Container(
             alignment: Alignment.center,
-            margin: EdgeInsets.all(0),
-            padding: EdgeInsets.all(0),
+            margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            padding: EdgeInsets.all(10),
             width: MediaQuery.of(context).size.width,
-            height: 100,
+            height: 120,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.zero,
@@ -50,7 +60,7 @@ class myprofileScreen extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.normal,
-                    fontSize: 14,
+                    fontSize: 18,
                     color: Color(0xff000000),
                   ),
                 ),
@@ -155,7 +165,7 @@ class myprofileScreen extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
-                    padding: EdgeInsets.all(0),
+                    padding: EdgeInsets.all(10),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       color: Color(0x00000000),
@@ -352,6 +362,7 @@ class myprofileScreen extends StatelessWidget {
           ),
         ],
       ),
+     ),
     );
   }
 }

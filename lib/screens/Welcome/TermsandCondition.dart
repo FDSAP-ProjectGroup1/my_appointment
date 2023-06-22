@@ -86,8 +86,25 @@ class _TermsAndConditionsPageState extends State<TermsAndConditionsPage> {
             ),
             SizedBox(height: 16),
             ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xff800000), // Change the button color here
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.0),
+                  gradient: LinearGradient(
+                    colors: [Colors.red, Color(0xff800000)],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                ),
+                padding: EdgeInsets.symmetric(vertical: 16.0),
+                child: Center(
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
               onPressed: () {
                 if (_isChecked) {
@@ -113,7 +130,12 @@ class _TermsAndConditionsPageState extends State<TermsAndConditionsPage> {
                   );
                 }
               },
-              child: Text("Continue"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.transparent,
+                onPrimary: Colors.white,
+                elevation: 0,
+                shadowColor: Colors.transparent,
+              ),
             ),
           ],
         ),

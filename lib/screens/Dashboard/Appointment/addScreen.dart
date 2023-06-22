@@ -52,7 +52,7 @@ class _addScreenState extends State<addScreen> {
                 margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
                 padding: EdgeInsets.zero,
                 width: MediaQuery.of(context).size.width,
-                height: 60,
+                height: 70,
                 decoration: BoxDecoration(
                   color: Color(0x00000000),
                   shape: BoxShape.rectangle,
@@ -83,7 +83,7 @@ class _addScreenState extends State<addScreen> {
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.normal,
-                        fontSize: 10,
+                        fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
@@ -91,7 +91,7 @@ class _addScreenState extends State<addScreen> {
                 ),
               ),
               Divider(
-                color: Colors.blueGrey.shade100,
+                color: Colors.black,
                 height: 20,
                 thickness: 1,
                 indent: 0,
@@ -114,11 +114,12 @@ class _addScreenState extends State<addScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 16.0),
               Container(
                 margin: EdgeInsets.all(0),
                 padding: EdgeInsets.zero,
-                width: 250,
-                height: 250,
+                width: 300,
+                height: 60,
                 decoration: BoxDecoration(
                   color: Colors.blueAccent.shade100,
                   shape: BoxShape.rectangle,
@@ -151,6 +152,7 @@ class _addScreenState extends State<addScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 16.0),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                 child: Align(
@@ -168,11 +170,12 @@ class _addScreenState extends State<addScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 16.0),
               Container(
                 margin: EdgeInsets.all(0),
                 padding: EdgeInsets.zero,
-                width: 250,
-                height: 150,
+                width: 300,
+                height: 60,
                 decoration: BoxDecoration(
                   color: Colors.tealAccent.shade400,
                   shape: BoxShape.rectangle,
@@ -203,6 +206,7 @@ class _addScreenState extends State<addScreen> {
                   ),
                 ),
               ),
+              SizedBox(height: 16.0),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                 child: Align(
@@ -223,7 +227,7 @@ class _addScreenState extends State<addScreen> {
               Container(
                 margin: EdgeInsets.all(0),
                 padding: EdgeInsets.zero,
-                width: 250,
+                width: 300,
                 height: 50,
                 decoration: BoxDecoration(
                   color: Color(0xffffffff),
@@ -258,8 +262,8 @@ class _addScreenState extends State<addScreen> {
               Container(
                 margin: EdgeInsets.all(0),
                 padding: EdgeInsets.zero,
-                width: 250,
-                height: 100,
+                width: 300,
+                height: 50,
                 decoration: BoxDecoration(
                   color: Color(0xffffffff),
                   shape: BoxShape.rectangle,
@@ -273,14 +277,42 @@ class _addScreenState extends State<addScreen> {
                   },
                 ),
               ),
+              SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () => submitAppointment(context),
-                child: Text('Submit'),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50.0),
+                    gradient: LinearGradient(
+                      colors: [Colors.red, Color(0xff800000)],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
+                  child: Center(
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent,
+                  onPrimary: Colors.white,
+                  elevation: 0,
+                  shadowColor: Colors.transparent,
+                ),
               ),
+              SizedBox(height: 16.0),
             ],
           ),
         ),
       ),
+
     );
   }
 

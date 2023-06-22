@@ -322,11 +322,11 @@ class searchScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: Colors.orange.shade100,
+                            color: Colors.blue.shade100,
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.circular(10.0),
                             border:
-                                Border.all(color: Color(0xff000000), width: 1),
+                            Border.all(color: Color(0xff000000), width: 1),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -424,11 +424,11 @@ class searchScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: Colors.purple.shade100,
+                            color: Colors.green.shade100,
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.circular(10.0),
                             border:
-                                Border.all(color: Color(0xff000000), width: 1),
+                            Border.all(color: Color(0xff000000), width: 1),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,

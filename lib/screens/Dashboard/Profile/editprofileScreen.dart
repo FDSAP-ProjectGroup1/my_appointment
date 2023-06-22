@@ -6,8 +6,18 @@ class editprofileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -15,8 +25,8 @@ class editprofileScreen extends StatelessWidget {
           children: [
             Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.all(0),
-              padding: EdgeInsets.all(0),
+              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              padding: EdgeInsets.all(10),
               width: MediaQuery.of(context).size.width,
               height: 100,
               decoration: BoxDecoration(
@@ -50,7 +60,7 @@ class editprofileScreen extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.normal,
-                      fontSize: 14,
+                      fontSize: 18,
                       color: Color(0xff000000),
                     ),
                   ),
@@ -83,7 +93,7 @@ class editprofileScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                         ),
-                        child: Image.asset("assets/images/5856.jpg",
+                        child: Image.asset("assets/images/person.png",
                             fit: BoxFit.cover),
                       ),
                     ),
@@ -127,11 +137,11 @@ class editprofileScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                    SizedBox(height: 10.0),
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
                       padding: EdgeInsets.all(0),
                       width: MediaQuery.of(context).size.width,
-                      height: 170,
                       decoration: BoxDecoration(
                         color: Color(0x00000000),
                         shape: BoxShape.rectangle,
@@ -163,22 +173,10 @@ class editprofileScreen extends StatelessWidget {
                                 color: Color(0xff000000),
                               ),
                               decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                prefixIcon: Icon(Icons.note_alt_sharp),
+                                prefixIcon: Icon(Icons.person),
                                 hintText: "Enter Name:",
                                 hintStyle: TextStyle(
                                   fontWeight: FontWeight.w400,
@@ -194,6 +192,7 @@ class editprofileScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height: 10.0),
                           Container(
                             margin: EdgeInsets.all(0),
                             padding: EdgeInsets.all(0),
@@ -215,20 +214,8 @@ class editprofileScreen extends StatelessWidget {
                                 color: Color(0xff000000),
                               ),
                               decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
                                 prefixIcon: Icon(Icons.mail),
                                 hintText: "Enter Email:",
@@ -246,6 +233,7 @@ class editprofileScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height: 10.0),
                           Container(
                             margin: EdgeInsets.all(0),
                             padding: EdgeInsets.all(0),
@@ -267,22 +255,10 @@ class editprofileScreen extends StatelessWidget {
                                 color: Color(0xff000000),
                               ),
                               decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                prefixIcon: Icon(Icons.password),
+                                prefixIcon: Icon(Icons.lock),
                                 hintText: "Enter Password:",
                                 hintStyle: TextStyle(
                                   fontWeight: FontWeight.w400,
@@ -298,6 +274,7 @@ class editprofileScreen extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height: 10.0),
                           Container(
                             margin: EdgeInsets.all(0),
                             padding: EdgeInsets.all(0),
@@ -319,22 +296,10 @@ class editprofileScreen extends StatelessWidget {
                                 color: Color(0xff000000),
                               ),
                               decoration: InputDecoration(
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
                                 ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
-                                  borderSide: BorderSide(
-                                      color: Color(0xff000000), width: 1),
-                                ),
-                                prefixIcon: Icon(Icons.contact_phone),
+                                prefixIcon: Icon(Icons.phone),
                                 hintText: "Enter Contact Number:",
                                 hintStyle: TextStyle(
                                   fontWeight: FontWeight.w400,
@@ -353,27 +318,37 @@ class editprofileScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    MaterialButton(
+                    SizedBox(height: 10.0),
+                    ElevatedButton(
                       onPressed: () {},
-                      color: Color(0xffffffff),
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5.0),
-                        side: BorderSide(color: Color(0xff000000), width: 1),
-                      ),
-                      padding: EdgeInsets.all(16),
-                      child: Text(
-                        "Save",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700,
-                          fontStyle: FontStyle.normal,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50.0),
+                          gradient: LinearGradient(
+                            colors: [Colors.red, Color(0xff800000)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                        ),
+                        padding: EdgeInsets.symmetric(vertical: 16.0),
+                        child: Center(
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
-                      textColor: Color(0xff000000),
-                      height: 50,
-                      minWidth: MediaQuery.of(context).size.width,
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        onPrimary: Colors.white,
+                        elevation: 0,
+                        shadowColor: Colors.transparent,
+                      ),
                     ),
+                    SizedBox(height: 30.0),
                   ],
                 ),
               ),
@@ -381,6 +356,7 @@ class editprofileScreen extends StatelessWidget {
           ],
         ),
       ),
+     ),
     );
   }
 }

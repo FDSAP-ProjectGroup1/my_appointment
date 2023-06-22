@@ -14,9 +14,19 @@ class LoginPage extends StatelessWidget {
       create: (context) => LoginProvider(),
       child: Consumer<LoginProvider>(
         builder: (context, loginProvider, _) => Scaffold(
-          backgroundColor: Colors.white,
-          body: Padding(
-            padding: EdgeInsets.fromLTRB(10, 50, 10, 0),
+          body: DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xff800000),
+                  Colors.red.shade50,
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(10, 50, 10, 80),
             child: SingleChildScrollView(
               // Wrap the Column with SingleChildScrollView
               child: Column(
@@ -84,20 +94,8 @@ class LoginPage extends StatelessWidget {
                           ),
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.mail),
-                            disabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.zero,
-                              borderSide:
-                                  BorderSide(color: Colors.black38, width: 1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.zero,
-                              borderSide: BorderSide(
-                                  color: Color(0xff000000), width: 1),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.zero,
-                              borderSide: BorderSide(
-                                  color: Color(0xff000000), width: 1),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                             hintText: "Email",
                             hintStyle: TextStyle(
@@ -126,20 +124,8 @@ class LoginPage extends StatelessWidget {
                           ),
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock),
-                            disabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.zero,
-                              borderSide: BorderSide(
-                                  color: Color(0xff000000), width: 1),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.zero,
-                              borderSide: BorderSide(
-                                  color: Color(0xff000000), width: 1),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.zero,
-                              borderSide: BorderSide(
-                                  color: Color(0xff000000), width: 1),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                             ),
                             hintText: "Password",
                             hintStyle: TextStyle(
@@ -155,26 +141,35 @@ class LoginPage extends StatelessWidget {
                                 vertical: 8, horizontal: 12),
                           ),
                         ),
-                        MaterialButton(
+                        ElevatedButton(
                           onPressed: () => loginProvider.login(context,
                               emailController.text, passwordController.text),
-                          color: Color(0xff800000),
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                          padding: EdgeInsets.all(16),
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              fontStyle: FontStyle.normal,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50.0),
+                              gradient: LinearGradient(
+                                colors: [Colors.red, Color(0xff800000)],
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                              ),
+                            ),
+                            padding: EdgeInsets.symmetric(vertical: 16.0),
+                            child: Center(
+                              child: Text(
+                                'Login',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
-                          textColor: Color(0xffffffff),
-                          height: 50,
-                          minWidth: MediaQuery.of(context).size.width,
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.transparent,
+                            onPrimary: Colors.white,
+                            elevation: 0,
+                            shadowColor: Colors.transparent,
+                          ),
                         ),
                       ],
                     ),
@@ -183,6 +178,7 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
+        ),
         ),
       ),
     );

@@ -169,10 +169,6 @@ class _RegistrationFormState extends State<RegistrationForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Registration Form'),
-        backgroundColor: Color(0xff800000),
-      ),
       body: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -184,12 +180,44 @@ class _RegistrationFormState extends State<RegistrationForm> {
             end: Alignment.bottomCenter,
           ),
         ),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(10, 50, 10, 50),
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xff212435),
+                      size: 25,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 10, 0, 20),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Register",
+                      textAlign: TextAlign.start,
+                      overflow: TextOverflow.clip,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 36,
+                        color: Color(0xff000000),
+                      ),
+                    ),
+                  ),
+                ),
                 HoverImage(),
                 SizedBox(height: 16.0),
                 TextFormField(
@@ -199,6 +227,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     labelText: 'Fullname',
                     filled: true,
                     fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.person),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -212,6 +241,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     labelText: 'Username',
                     filled: true,
                     fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.person),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -226,6 +256,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     labelText: 'Password',
                     filled: true,
                     fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.lock),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -248,6 +279,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     labelText: 'Confirm Password',
                     filled: true,
                     fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.lock),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -261,6 +293,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     labelText: 'Address',
                     filled: true,
                     fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.location_pin),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -300,6 +333,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
             ),
           ),
         ),
+      ),
       ),
     );
   }

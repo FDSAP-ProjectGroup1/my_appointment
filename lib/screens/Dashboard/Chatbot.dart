@@ -85,6 +85,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return IconTheme(
       data: IconThemeData(color: Theme.of(context).accentColor),
       child: Container(
+        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
         margin: EdgeInsets.symmetric(horizontal: 8.0),
         child: Column(
           children: [
@@ -117,7 +118,13 @@ class _ChatScreenState extends State<ChatScreen> {
                 _textController.text = suggestion;
               },
               child: Chip(
-                label: Text(suggestion),
+                padding: EdgeInsets.all(10),
+                label: Text(
+                  suggestion,
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
               ),
             ),
           );
@@ -130,15 +137,21 @@ class _ChatScreenState extends State<ChatScreen> {
     return Align(
       alignment: isUserMessage ? Alignment.topRight : Alignment.topLeft,
       child: Container(
-        padding: EdgeInsets.all(8.0),
-        margin: EdgeInsets.symmetric(vertical: 4.0),
+        padding: EdgeInsets.fromLTRB(18, 12, 18, 12),
+        margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isUserMessage ? Color(0xff800000) : Colors.blue.shade500,
-          borderRadius: BorderRadius.circular(8.0),
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(10.0),
+              bottomLeft: Radius.circular(10.0),
+          ),
         ),
         child: Text(
           message,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 15,
+          ),
         ),
       ),
     );
@@ -153,12 +166,52 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Chatbot'),
-        backgroundColor: Color(0xff800000),
-      ),
       body: Column(
         children: [
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 20),
+            width: MediaQuery.of(context).size.width,
+            height: 120,
+            decoration: BoxDecoration(
+              color: Color(0xff800000),
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.zero,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: IconButton(
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Color(0xff000000),
+                        size: 25,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ),
+                ),
+                Text(
+                  "YOUR CHATBOT",
+                  textAlign: TextAlign.start,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                    fontSize: 18,
+                    color: Color(0xff000000),
+                  ),
+                ),
+              ],
+            ),
+          ),
           Expanded(
             child: LayoutBuilder(
               builder: (context, constraints) {
@@ -182,6 +235,7 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           Divider(height: 1.0),
           Container(
+            padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
             decoration: BoxDecoration(color: Theme.of(context).cardColor),
             child: _buildTextComposer(),
           ),
