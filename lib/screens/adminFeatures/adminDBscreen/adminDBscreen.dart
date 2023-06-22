@@ -7,7 +7,7 @@ class adminDBscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff3e9a71),
+      backgroundColor: Color(0xffffffff),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -20,7 +20,7 @@ class adminDBscreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: 120,
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: Color(0xff800000),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(25.0),
@@ -291,7 +291,7 @@ class adminDBscreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/5856.jpg",
+                              child: Image.asset("assets/images/person.png",
                                   fit: BoxFit.cover),
                             ),
                           ),
@@ -364,7 +364,7 @@ class adminDBscreen extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset("assets/images/5856.jpg",
+                              child: Image.asset("assets/images/person.png",
                                   fit: BoxFit.cover),
                             ),
                           ),

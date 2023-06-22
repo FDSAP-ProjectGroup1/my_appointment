@@ -8,7 +8,7 @@ class adminALscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff3e9a71),
+      backgroundColor: Color(0xffffffff),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -21,7 +21,7 @@ class adminALscreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: 120,
               decoration: BoxDecoration(
-                color: Color(0xffffffff),
+                color: Color(0xff800000),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(25.0),
@@ -250,7 +250,7 @@ class adminALscreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffdadada),
+                                    color: Color(0xff800000),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.0),
@@ -270,7 +270,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 30,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                       Text(
@@ -281,7 +281,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                     ],
@@ -413,7 +413,7 @@ class adminALscreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffdadada),
+                                    color: Color(0xff800000),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.0),
@@ -433,7 +433,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 30,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                       Text(
@@ -444,7 +444,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                     ],
@@ -604,7 +604,7 @@ class adminALscreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffdadada),
+                                    color: Color(0xff800000),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.0),
@@ -624,7 +624,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 30,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                       Text(
@@ -635,7 +635,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                     ],
@@ -708,7 +708,7 @@ class adminALscreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffdadada),
+                                    color: Color(0xff800000),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.0),
@@ -728,7 +728,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 30,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                       Text(
@@ -739,7 +739,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                     ],
@@ -840,7 +840,7 @@ class adminALscreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffdadada),
+                                    color: Color(0xff800000),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.0),
@@ -860,7 +860,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 30,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                       Text(
@@ -871,7 +871,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                     ],
@@ -944,7 +944,7 @@ class adminALscreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   decoration: BoxDecoration(
-                                    color: Color(0xffdadada),
+                                    color: Color(0xff800000),
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.0),
@@ -964,7 +964,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 30,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                       Text(
@@ -975,7 +975,7 @@ class adminALscreen extends StatelessWidget {
                                           fontWeight: FontWeight.w400,
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
-                                          color: Color(0xff000000),
+                                          color: Color(0xffffffff),
                                         ),
                                       ),
                                     ],

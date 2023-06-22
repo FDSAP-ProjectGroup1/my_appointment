@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectsystem/screens/Dashboard/dashboardScreen.dart';
 import 'package:projectsystem/screens/Welcome/WelcomeScreen.dart';
+import 'package:projectsystem/screens/adminFeatures/adminDBscreen/adminDBscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Appointment Scheduler',
-      home: DashboardScreen(),
+      home: WelcomeScreen(),
     );
   }
 }

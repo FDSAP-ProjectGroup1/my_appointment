@@ -5,8 +5,18 @@ class adminNMscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff3e9a71),
-      body: Padding(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      child: Padding(
         padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
         child: SingleChildScrollView(
           child: Column(
@@ -17,9 +27,9 @@ class adminNMscreen extends StatelessWidget {
               Container(
                 alignment: Alignment.center,
                 margin: EdgeInsets.all(0),
-                padding: EdgeInsets.all(0),
+                padding: EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width,
-                height: 100,
+                height: 120,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.zero,
@@ -45,13 +55,13 @@ class adminNMscreen extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "My Profile",
+                      "Notification",
                       textAlign: TextAlign.start,
                       overflow: TextOverflow.clip,
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.normal,
-                        fontSize: 14,
+                        fontSize: 18,
                         color: Color(0xff000000),
                       ),
                     ),
@@ -104,7 +114,7 @@ class adminNMscreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset("assets/images/5856.jpg",
+                            child: Image.asset("assets/images/person.png",
                                 fit: BoxFit.cover),
                           ),
                         ),
@@ -189,6 +199,7 @@ class adminNMscreen extends StatelessWidget {
           ),
         ),
       ),
+     ),
     );
   }
 }

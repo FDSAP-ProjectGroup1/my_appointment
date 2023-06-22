@@ -5,8 +5,18 @@ class adminVAscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff3d9970),
-      body: Column(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
@@ -51,7 +61,7 @@ class adminVAscreen extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontStyle: FontStyle.normal,
-                    fontSize: 10,
+                    fontSize: 15,
                     color: Color(0xff000000),
                   ),
                 ),
@@ -249,6 +259,7 @@ class adminVAscreen extends StatelessWidget {
           ),
         ],
       ),
+     ),
     );
   }
 }
