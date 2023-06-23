@@ -39,8 +39,18 @@ class _addScreenState extends State<addScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color(0xff800000),
+              Colors.red.shade50,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      child: Padding(
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
         child: SingleChildScrollView(
           child: Column(
@@ -121,10 +131,12 @@ class _addScreenState extends State<addScreen> {
                 width: 300,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.blueAccent.shade100,
+                  color: Colors.white,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: Color(0xff000000), width: 1),
                 ),
+
                 child: InkWell(
                   onTap: () async {
                     final selected = await showDatePicker(
@@ -177,9 +189,10 @@ class _addScreenState extends State<addScreen> {
                 width: 300,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.tealAccent.shade400,
+                  color: Colors.white,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: Color(0xff000000), width: 1),
                 ),
                 child: InkWell(
                   onTap: () async {
@@ -225,14 +238,14 @@ class _addScreenState extends State<addScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(0),
-                padding: EdgeInsets.zero,
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 width: 300,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Color(0xffffffff),
+                  color: Colors.white,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: Color(0xff000000), width: 1),
                 ),
                 child: TextField(
                   onChanged: (value) {
@@ -260,14 +273,14 @@ class _addScreenState extends State<addScreen> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.all(0),
-                padding: EdgeInsets.zero,
+                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
                 width: 300,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Color(0xffffffff),
+                  color: Colors.white,
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: Color(0xff000000), width: 1),
                 ),
                 child: TextField(
                   onChanged: (value) {
@@ -312,7 +325,7 @@ class _addScreenState extends State<addScreen> {
           ),
         ),
       ),
-
+     ),
     );
   }
 

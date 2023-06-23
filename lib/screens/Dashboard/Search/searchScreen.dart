@@ -322,7 +322,7 @@ class searchScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: Colors.blue.shade100,
+                            color: Colors.white,
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.circular(10.0),
                             border:
@@ -424,7 +424,7 @@ class searchScreen extends StatelessWidget {
                           width: MediaQuery.of(context).size.width,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: Colors.green.shade100,
+                            color: Colors.white,
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.circular(10.0),
                             border:

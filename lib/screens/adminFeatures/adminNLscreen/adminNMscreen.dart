@@ -48,9 +48,7 @@ class adminNMscreen extends StatelessWidget {
                           size: 25,
                         ),
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => adminNLscreen(),
-                          ));
+                          Navigator.of(context).pop();
                         },
                       ),
                     ),

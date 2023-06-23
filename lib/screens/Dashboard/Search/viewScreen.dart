@@ -70,7 +70,7 @@ class viewScreen extends StatelessWidget {
             ),
           ),
           Divider(
-            color: Colors.blueGrey.shade100,
+            color: Colors.black,
             height: 20,
             thickness: 1,
             indent: 0,
@@ -89,7 +89,7 @@ class viewScreen extends StatelessWidget {
                   width: 100,
                   height: 100,
                   decoration: BoxDecoration(
-                    color: Color(0xff800000),
+                    color: Color(0xffffffff),
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -106,7 +106,7 @@ class viewScreen extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 30,
-                          color: Color(0xffffffff),
+                          color: Color(0xff000000),
                         ),
                       ),
                       Text(
@@ -117,7 +117,7 @@ class viewScreen extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           fontStyle: FontStyle.normal,
                           fontSize: 14,
-                          color: Color(0xffffffff),
+                          color: Color(0xff000000),
                         ),
                       ),
                     ],
@@ -129,7 +129,7 @@ class viewScreen extends StatelessWidget {
                   width: 165,
                   height: 100,
                   decoration: BoxDecoration(
-                    color: Colors.green.shade100,
+                    color: Colors.white,
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: Color(0xff000000), width: 1),
@@ -176,7 +176,7 @@ class viewScreen extends StatelessWidget {
             width: 265,
             height: 200,
             decoration: BoxDecoration(
-              color: Colors.blue.shade100,
+              color: Colors.white,
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(10.0),
               border: Border.all(color: Color(0xff000000), width: 1),

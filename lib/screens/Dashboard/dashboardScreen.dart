@@ -442,7 +442,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         height: 80,
                         decoration: BoxDecoration(
-                          color: Colors.blue.shade100,
+                          color: Colors.white,
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(10.0),
                           border:
@@ -544,7 +544,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         height: 80,
                         decoration: BoxDecoration(
-                          color: Colors.green.shade100,
+                          color: Colors.white,
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(10.0),
                           border:
@@ -645,6 +645,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.of(context)

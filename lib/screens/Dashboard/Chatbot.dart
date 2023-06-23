@@ -11,7 +11,7 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _textController = TextEditingController();
   List<String> _messages = [];
-  List<String> _suggestions = ['Hello', 'Help', 'Goodbye']; // Text suggestions
+  List<String> _suggestions = ['Hi', 'Hello', 'Help', 'Goodbye']; // Text suggestions
   ScrollController _scrollController = ScrollController();
   bool _shouldScroll = false;
 
@@ -83,7 +83,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget _buildTextComposer() {
     return IconTheme(
-      data: IconThemeData(color: Theme.of(context).accentColor),
+      data: IconThemeData(color: Theme.of(context).primaryColor),
       child: Container(
         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
         margin: EdgeInsets.symmetric(horizontal: 8.0),

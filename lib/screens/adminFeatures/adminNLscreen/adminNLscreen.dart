@@ -38,7 +38,7 @@ class adminNLscreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Image(
                       image:
-                          AssetImage("assets/images/logo (black)clear BG.png"),
+                          AssetImage("assets/images/text.png"),
                       height: 30,
                       width: 170,
                       fit: BoxFit.scaleDown,
@@ -62,7 +62,7 @@ class adminNLscreen extends StatelessWidget {
                         child: IconButton(
                           icon: const Icon(
                             Icons.person,
-                            color: Color(0xff000000),
+                            color: Color(0xffffffff),
                             size: 24,
                           ),
                           onPressed: () {
@@ -85,7 +85,7 @@ class adminNLscreen extends StatelessWidget {
                         child: IconButton(
                           icon: const Icon(
                             Icons.list,
-                            color: Color(0xff000000),
+                            color: Color(0xffffffff),
                             size: 24,
                           ),
                           onPressed: () {
@@ -108,7 +108,7 @@ class adminNLscreen extends StatelessWidget {
                         child: IconButton(
                           icon: const Icon(
                             Icons.notifications,
-                            color: Color(0xff000000),
+                            color: Color(0xffffffff),
                             size: 24,
                           ),
                           onPressed: () {
@@ -131,7 +131,7 @@ class adminNLscreen extends StatelessWidget {
                         child: IconButton(
                           icon: const Icon(
                             Icons.logout,
-                            color: Color(0xff000000),
+                            color: Color(0xffffffff),
                             size: 24,
                           ),
                           onPressed: () {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectsystem/screens/Welcome/WelcomeScreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminALscreen/adminALscreen.dart';
+import 'package:projectsystem/screens/adminFeatures/adminDBscreen/adminVUscreen.dart';
 import 'package:projectsystem/screens/adminFeatures/adminNLscreen/adminNLscreen.dart';
 
 class adminDBscreen extends StatelessWidget {
@@ -38,7 +39,7 @@ class adminDBscreen extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Image(
                         image: AssetImage(
-                            "assets/images/logo (black)clear BG.png"),
+                            "assets/images/text.png"),
                         height: 30,
                         width: 170,
                         fit: BoxFit.scaleDown,
@@ -62,7 +63,7 @@ class adminDBscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.person,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -85,7 +86,7 @@ class adminDBscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.list,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -108,7 +109,7 @@ class adminDBscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.notifications,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -131,7 +132,7 @@ class adminDBscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.logout,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -257,150 +258,164 @@ class adminDBscreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
-                      padding: EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        color: Color(0xffffffff),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(color: Color(0xff000000), width: 1),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                            padding: EdgeInsets.all(0),
-                            width: 70,
-                            height: 70,
-                            decoration: BoxDecoration(
-                              color: Color(0xffffffff),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                  color: Color(0xff000000), width: 1),
-                            ),
-                            child: Container(
-                              height: MediaQuery.of(context).size.width,
-                              width: MediaQuery.of(context).size.width,
-                              clipBehavior: Clip.antiAlias,
+                    MaterialButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => adminVUscreen(),
+                        ));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                        padding: EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border.all(color: Color(0xff000000), width: 1),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                              padding: EdgeInsets.all(0),
+                              width: 70,
+                              height: 70,
                               decoration: BoxDecoration(
+                                color: Color(0xffffffff),
                                 shape: BoxShape.circle,
+                                border: Border.all(
+                                    color: Color(0xff000000), width: 1),
                               ),
-                              child: Image.asset("assets/images/person.png",
-                                  fit: BoxFit.cover),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  "username",
-                                  textAlign: TextAlign.start,
-                                  overflow: TextOverflow.clip,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14,
-                                    color: Color(0xff000000),
-                                  ),
+                              child: Container(
+                                height: MediaQuery.of(context).size.width,
+                                width: MediaQuery.of(context).size.width,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
                                 ),
-                                Text(
-                                  "sample@email",
-                                  textAlign: TextAlign.start,
-                                  overflow: TextOverflow.clip,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ],
+                                child: Image.asset("assets/images/person.png",
+                                    fit: BoxFit.cover),
+                              ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    "username",
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.clip,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 14,
+                                      color: Color(0xff000000),
+                                    ),
+                                  ),
+                                  Text(
+                                    "sample@email",
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.clip,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 14,
+                                      color: Color(0xff000000),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
-                      padding: EdgeInsets.all(0),
-                      width: MediaQuery.of(context).size.width * 0.8,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        color: Color(0xffffffff),
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(color: Color(0xff000000), width: 1),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-                            padding: EdgeInsets.all(0),
-                            width: 70,
-                            height: 70,
-                            decoration: BoxDecoration(
-                              color: Color(0xffffffff),
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                  color: Color(0xff000000), width: 1),
-                            ),
-                            child: Container(
-                              height: MediaQuery.of(context).size.width,
-                              width: MediaQuery.of(context).size.width,
-                              clipBehavior: Clip.antiAlias,
+                    MaterialButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => adminVUscreen(),
+                        ));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                        padding: EdgeInsets.all(0),
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: Color(0xffffffff),
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(10.0),
+                          border: Border.all(color: Color(0xff000000), width: 1),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                              padding: EdgeInsets.all(0),
+                              width: 70,
+                              height: 70,
                               decoration: BoxDecoration(
+                                color: Color(0xffffffff),
                                 shape: BoxShape.circle,
+                                border: Border.all(
+                                    color: Color(0xff000000), width: 1),
                               ),
-                              child: Image.asset("assets/images/person.png",
-                                  fit: BoxFit.cover),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  "username",
-                                  textAlign: TextAlign.start,
-                                  overflow: TextOverflow.clip,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14,
-                                    color: Color(0xff000000),
-                                  ),
+                              child: Container(
+                                height: MediaQuery.of(context).size.width,
+                                width: MediaQuery.of(context).size.width,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
                                 ),
-                                Text(
-                                  "sample@email",
-                                  textAlign: TextAlign.start,
-                                  overflow: TextOverflow.clip,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 14,
-                                    color: Color(0xff000000),
-                                  ),
-                                ),
-                              ],
+                                child: Image.asset("assets/images/person.png",
+                                    fit: BoxFit.cover),
+                              ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    "username",
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.clip,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 14,
+                                      color: Color(0xff000000),
+                                    ),
+                                  ),
+                                  Text(
+                                    "sample@email",
+                                    textAlign: TextAlign.start,
+                                    overflow: TextOverflow.clip,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 14,
+                                      color: Color(0xff000000),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

@@ -143,7 +143,7 @@ class myprofileScreen extends StatelessWidget {
                         builder: (context) => editprofileScreen(),
                       ));
                     },
-                    color: Color(0xff800000),
+                    color: Color(0xffffffff),
                     elevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
@@ -153,12 +153,12 @@ class myprofileScreen extends StatelessWidget {
                     child: Text(
                       "EDIT PROFILE",
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: 14,
                         fontWeight: FontWeight.w700,
                         fontStyle: FontStyle.normal,
                       ),
                     ),
-                    textColor: Colors.white,
+                    textColor: Colors.black,
                     height: 50,
                     minWidth: MediaQuery.of(context).size.width,
                   ),

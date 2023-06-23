@@ -39,7 +39,7 @@ class adminALscreen extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Image(
                         image: AssetImage(
-                            "assets/images/logo (black)clear BG.png"),
+                            "assets/images/text.png"),
                         height: 30,
                         width: 170,
                         fit: BoxFit.scaleDown,
@@ -63,7 +63,7 @@ class adminALscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.person,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -86,7 +86,7 @@ class adminALscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.list,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -109,7 +109,7 @@ class adminALscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.notifications,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -132,7 +132,7 @@ class adminALscreen extends StatelessWidget {
                           child: IconButton(
                             icon: const Icon(
                               Icons.logout,
-                              color: Color(0xff000000),
+                              color: Color(0xffffffff),
                               size: 24,
                             ),
                             onPressed: () {
@@ -181,6 +181,52 @@ class adminALscreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Padding(
+                    padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                    child: TextField(
+                      controller: TextEditingController(),
+                      obscureText: false,
+                      textAlign: TextAlign.start,
+                      maxLines: 1,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 14,
+                        color: Color(0xff000000),
+                      ),
+                      decoration: InputDecoration(
+                        disabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4.0),
+                          borderSide:
+                          BorderSide(color: Color(0xff000000), width: 1),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4.0),
+                          borderSide:
+                          BorderSide(color: Color(0xff000000), width: 1),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(4.0),
+                          borderSide:
+                          BorderSide(color: Color(0xff000000), width: 1),
+                        ),
+                        hintText: "Search",
+                        hintStyle: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontStyle: FontStyle.normal,
+                          fontSize: 14,
+                          color: Color(0xff000000),
+                        ),
+                        filled: true,
+                        fillColor: Color(0xfff2f2f3),
+                        isDense: false,
+                        contentPadding:
+                        EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        prefixIcon: Icon(Icons.search,
+                            color: Color(0xff212435), size: 24),
+                      ),
+                    ),
+            ),
                     Padding(
                       padding:
                           EdgeInsets.symmetric(vertical: 10, horizontal: 0),
@@ -240,7 +286,7 @@ class adminALscreen extends StatelessWidget {
                                   color: Color(0xff000000), width: 1),
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -320,65 +366,6 @@ class adminALscreen extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  alignment: Alignment.centerRight,
-                                  margin: EdgeInsets.zero,
-                                  padding: EdgeInsets.zero,
-                                  width: 150,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x00000000),
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.zero,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                        padding: EdgeInsets.zero,
-                                        width: 35,
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x800cff00),
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: Color(0x4d9e9e9e),
-                                              width: 1),
-                                        ),
-                                        child: Icon(
-                                          Icons.done,
-                                          color: Color(0xff212435),
-                                          size: 24,
-                                        ),
-                                      ),
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                        padding: EdgeInsets.zero,
-                                        width: 35,
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x80ff0000),
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: Color(0x4d9e9e9e),
-                                              width: 1),
-                                        ),
-                                        child: Icon(
-                                          Icons.delete,
-                                          color: Color(0xff212435),
-                                          size: 24,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                               ],
                             ),
                           ),
@@ -403,7 +390,7 @@ class adminALscreen extends StatelessWidget {
                                   color: Color(0xff000000), width: 1),
                             ),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -478,65 +465,6 @@ class adminALscreen extends StatelessWidget {
                                           fontStyle: FontStyle.normal,
                                           fontSize: 14,
                                           color: Color(0xff000000),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  alignment: Alignment.centerRight,
-                                  margin: EdgeInsets.zero,
-                                  padding: EdgeInsets.zero,
-                                  width: 150,
-                                  height: 100,
-                                  decoration: BoxDecoration(
-                                    color: Color(0x00000000),
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.zero,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                        padding: EdgeInsets.zero,
-                                        width: 35,
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x800cff00),
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: Color(0x4d9e9e9e),
-                                              width: 1),
-                                        ),
-                                        child: Icon(
-                                          Icons.done,
-                                          color: Color(0xff212435),
-                                          size: 24,
-                                        ),
-                                      ),
-                                      Container(
-                                        margin:
-                                            EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                        padding: EdgeInsets.zero,
-                                        width: 35,
-                                        height: 35,
-                                        decoration: BoxDecoration(
-                                          color: Color(0x80ff0000),
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                              color: Color(0x4d9e9e9e),
-                                              width: 1),
-                                        ),
-                                        child: Icon(
-                                          Icons.delete,
-                                          color: Color(0xff212435),
-                                          size: 24,
                                         ),
                                       ),
                                     ],

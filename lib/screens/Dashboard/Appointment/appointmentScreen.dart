@@ -139,7 +139,7 @@ class appointmentScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "Jan",
-                                  textAlign: TextAlign.start,
+                                  textAlign: TextAlign.center,
                                   overflow: TextOverflow.clip,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
@@ -150,7 +150,7 @@ class appointmentScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   "01",
-                                  textAlign: TextAlign.start,
+                                  textAlign: TextAlign.center,
                                   overflow: TextOverflow.clip,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
@@ -183,7 +183,7 @@ class appointmentScreen extends StatelessWidget {
                                   width: 250,
                                   height: 100,
                                   decoration: BoxDecoration(
-                                    color: Colors.green.shade100,
+                                    color: Colors.white,
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.circular(10.0),
                                     border: Border.all(
@@ -230,7 +230,7 @@ class appointmentScreen extends StatelessWidget {
                                   width: 250,
                                   height: 100,
                                   decoration: BoxDecoration(
-                                    color: Colors.blue.shade100,
+                                    color: Colors.white,
                                     shape: BoxShape.rectangle,
                                     borderRadius: BorderRadius.circular(10.0),
                                     border: Border.all(

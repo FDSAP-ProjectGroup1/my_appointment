@@ -47,9 +47,7 @@ class adminVAscreen extends StatelessWidget {
                         size: 25,
                       ),
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => adminALscreen(),
-                        ));
+                        Navigator.of(context).pop();
                       },
                     ),
                   ),
@@ -230,13 +228,13 @@ class adminVAscreen extends StatelessWidget {
                   width: 70,
                   height: 70,
                   decoration: BoxDecoration(
-                    color: Color(0xff09ff00),
+                    color: Color(0xffffffff),
                     shape: BoxShape.circle,
-                    border: Border.all(color: Color(0x4d9e9e9e), width: 1),
+                    border: Border.all(color: Color(0xff000000), width: 1),
                   ),
                   child: Icon(
                     Icons.edit,
-                    color: Color(0xffffffff),
+                    color: Color(0xff000000),
                     size: 25,
                   ),
                 ),
@@ -246,11 +244,11 @@ class adminVAscreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Color(0xffff0000),
                     shape: BoxShape.circle,
-                    border: Border.all(color: Color(0x4d9e9e9e), width: 1),
+                    border: Border.all(color: Color(0xff000000), width: 1),
                   ),
                   child: Icon(
                     Icons.delete,
-                    color: Color(0xffffffff),
+                    color: Color(0xff000000),
                     size: 25,
                   ),
                 ),
